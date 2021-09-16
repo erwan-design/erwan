@@ -1,0 +1,1010 @@
+/* ===============================  Sommaire  =============================== */
+/* 1. Navigation */
+/* 2. Header */
+/* 3. Services */
+/* 4. Numbers */
+/* 5. Portfolio */
+/* 6. Hire me */
+/* 7. Company */
+/* 8. Clients */
+/* 9. Contact me */
+/* 10. Footer */
+/* 11. Copyright */
+
+
+/* Import FONT from font.css */
+@import url("font.css");
+
+/* Import BUTTON from buttons.css */
+@import url("buttons.css");
+
+
+/* ===============================  Variables  =============================== */
+
+:root {
+  --primary: rgba(16,77,130,100);
+  --primarydark: rgba(9,46,79,100);
+  --primarylight: rgba(16,77,130,.05);
+  --secondary: rgba(30,30,30,100);
+  --tersary: rgba(30,30,30,.6);
+  --fontthin: "Proxima thin", sans-serif;
+  --fontregular: "Proxima regular", sans-serif;
+  --fontbold: "Proxima bold", sans-serif;
+  --container: calc(100% - 40px);
+  --radius: .7rem;
+  --shadow: 2px 7px 40px -14px rgba(16,77,130,0.2);
+  --transitions: all .3s ease;
+  --mb1: 1.5rem;
+  --mb2: 2.5rem;
+/* Neumorphism effect */
+  --bgPrimary: rgb(236, 240, 243);
+  --bgSecondary: linear-gradient(145deg, #fdffff, #d1d9e6);
+  --neumoShadow1: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+  --neumoShadow2: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6, 4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
+  --neumoP: rgb(156, 169, 190);
+  --neumoTitle: rgb(60, 74, 112);
+}
+
+
+/* ===============================  Global  =============================== */
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* basefont */font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 30em) {
+  html {
+    font-size: calc(0.9375rem + 0.20833333333333334vw);
+  }
+}
+
+@media (min-width: 90em) {
+  html {
+    font-size: 1.125rem;
+  }
+}
+
+body {
+  font-family: var(--fontregular);
+  line-height: 1.6;
+  background: var(--bgPrimary);
+}
+
+p {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--neumoP);
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  color: var(--neumoTitle);
+  font-family: var(--fontbold);
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: .08rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: .3rem;
+  background-color: var(--primary);
+  margin-top: 1.5rem;
+  border-radius: 10px;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin-bottom: .7rem;
+}
+
+/* 'Hello' Title */h5 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--neumoTitle);
+  letter-spacing: .1rem;
+  opacity: .8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transitions);
+}
+
+button:focus,
+button:active,
+button:hover {
+  outline: 0;
+  box-shadow: none;
+}
+
+
+i {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: var(--mb1);
+  background: var(--primarylight);
+  padding: 1.3rem;
+  border-radius: 20rem;
+  transition: var(--transitions);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+img {
+  height: auto; 
+  object-fit: cover;
+  display: block;
+}
+
+.container__big {
+  width: 100%;  
+}
+
+.container__padding {
+  width: 100%;
+  padding-left: calc(50% - var(--container) / 2);
+  padding-right: calc(50% - var(--container) / 2);  
+}
+
+@media (min-width: 1140px) {
+  :root {
+  --container: 1100px;
+  }
+}
+
+.mt__section {
+  margin-top: 5.5rem;
+}
+
+.bg__light {
+  background: var(--primarylight);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-lg-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media (max-width: 600px) {
+.col-sm-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.header {
+  position: relative;
+}
+
+/* ===============================  1. Navigation  =============================== */
+
+.nav {
+  /* suppr */position: fixed;
+  background: var(--bgPrimary);
+  left: 50%;
+  top: 3%;
+  transform: translateX(-50%);
+  width: 80%; 
+  padding: .7rem 1rem;
+  border-radius: 20rem;
+  z-index: 1;
+  text-transform: uppercase;
+  box-shadow: var(--neumoShadow1);
+  transition: all .6s ease;
+}
+
+.nav__logo {
+  margin-top: .3rem;
+  position: fixed;
+  float: left;
+  margin-left: .4rem;
+}
+
+.nav__logo img {
+  max-width: 7rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
+  transition: 1s;
+  text-align: right;
+}
+
+.nav__menu li:not(:first-child) {
+  margin-left: 2.4rem;
+}
+
+.nav__menu a {
+  font-size: .9rem;
+  color: var(--neumoTitle);
+}
+
+.nav__menu a:hover {
+  color: var(--primary);
+}
+
+.nav__icon {
+  width: 100%;
+  text-align: right;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: none;
+}
+
+.nav__icon i {
+  margin-bottom: 0;
+  padding: .7rem;
+}
+
+a.nav__active {
+  color: var(--primary);
+}
+
+.nav__menu .button {
+  margin: 0;
+  color: var(--primary);
+}
+.nav__menu .button:hover {
+  margin: 0;
+  color: rgba(16,77,130,.5);
+}
+
+/* ===============================  2. Banner  =============================== */
+
+.banner {
+  height: 100vh;
+}
+
+.banner__img {
+  display: flex;
+  padding: 8rem 4rem;
+}
+
+.banner__img img {
+  width: -webkit-fill-available;
+}
+
+.banner__title__desc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 3rem;
+  margin-right: 5rem;
+}
+
+.banner__title__desc p {
+  margin-bottom: 1rem;
+}
+
+.banner__title__desc a {
+  margin-top: 1rem;
+}
+
+.banner__title__desc #cvViewer {
+  margin-right: 1rem;
+}
+
+/* ===============================  3. Services  =============================== */
+
+.services__descriptions {
+  padding-right: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.services__descriptions p {
+  margin-bottom: 2rem;
+}
+
+.services__descriptions a {
+  align-self: flex-start;
+}
+
+.services__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, auto);
+  grid-gap: 1.5rem;
+}
+
+.services__items1 {
+  margin-top: 4rem;
+}
+
+.services__items2 {
+  margin-bottom: 4rem;
+}
+
+.items__card {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  min-height: 1px;
+  padding: 1.7rem 1.25rem;
+  background: var(--bgPrimary);
+  border-radius: var(--radius);
+  box-shadow: var(--neumoShadow1);
+}
+
+.card1,
+.card3 {
+  margin-bottom: var(--mb1);
+}
+
+/* =============================== 4. Numbers  =============================== */
+
+.container__padding__bg {
+  width: 100%;
+  padding-left: calc(50% - var(--container) / 2);
+  padding-right: calc(50% - var(--container) / 2);
+  background: no-repeat center center / cover url("../img/pattern-lines.svg");
+  background-color: var(--primarylight);  
+}
+
+.numbers__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 4rem .5rem;
+}
+
+.numbers__list .active {
+  box-shadow: var(--neumoShadow2);
+  background: var(--bgPrimary);
+}
+
+/* .numbers__list .active p {
+  color: white;
+} */
+
+/* .numbers__list li:not(:nth-child(2)) {
+  border: solid .2rem var(--primary);
+} */
+
+.numbers__list li {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--bgPrimary);
+  box-shadow: var(--neumoShadow1);
+}
+
+.numbers__list .list__item span {
+  font-size: 2.3rem;
+  margin-top: -.5rem;
+  color: var(--neumoTitle);
+}
+
+.numbers__list .list__item p {
+  text-transform: uppercase;
+  margin-top: -.7rem;
+}
+
+/* =============================== 5. Portfolio  =============================== */
+
+.portfolio__descriptions {
+  padding-left: 6rem;
+}
+
+.portfolio__nav {
+  padding: 1rem 7rem 1rem 2rem;
+  display: inline-block;
+  margin-top: 2.5rem;
+  border-radius: var(--radius);
+  background: var(--bgPrimary);
+  box-shadow: var(--neumoShadow1);
+}
+
+.portfolio__nav button {
+  display: block;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+  font-size: .9rem;
+  background: transparent;
+  border: none;
+  color: var(--neumoTitle);
+}
+
+.portfolio__nav .active,
+.portfolio__nav button:hover {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.wall-item {
+  display: block;
+  transition: all 220ms;
+}
+
+.wall-item > img {
+  display: block;
+  width: 100%;
+  margin: 0 0 24px 0;
+  border-radius: var(--radius);
+}
+
+#first-img,
+#last-img {
+  height: 12rem;
+}
+
+.wall {
+  display: block;
+  position: relative;
+}
+
+.wall-column {
+  display: block;
+  position: relative;
+  width: 50%;
+  float: left;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .wall-column { width: 50%; 
+  }
+}
+
+@media (max-width: 480px) {
+.wall-column {
+  width: auto;
+  float: none;
+  }
+}
+
+/* =============================== 5(bis). Video  =============================== */
+
+.video {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+/* =============================== 6. Hire me  =============================== */
+
+.hire__descriptions {
+  position: relative;
+}
+
+.hire__desc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 6rem;
+}
+
+.hire__descriptions p {
+  margin-bottom: 2rem;
+}
+
+.hire__item {
+  border-radius: var(--radius);
+  padding: 1.3rem 1.8rem;
+  display: flex;
+  align-items: center;
+  background: var(--bgPrimary);
+  box-shadow: var(--neumoShadow1);
+}
+
+.hire__item:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.hire__item i {
+  margin: 0;
+}
+
+.hire__item__desc {
+  margin-left: 2rem;
+}
+
+/* =============================== 7. Company  =============================== */
+
+.company__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.company__item img {
+  width: 9rem;
+  opacity: .4;
+  transition: var(--transitions);
+}
+
+.company__item img:hover {
+  color: var(--secondary);
+  opacity: .6;
+}
+
+/* =============================== 8. Clients  =============================== */
+
+.container__padding__left {
+  width: 100%;
+  padding-left: calc(50% - var(--container) / 2); 
+}
+
+.clients {
+  display: flex;
+}
+
+.clients__descriptions {
+  width: 30%;
+}
+
+.clients__items {
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.clients__descriptions i {
+  font-size: 5rem;
+  color: var(--primarylight);
+  margin-bottom: 0;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 2rem;
+}
+
+.clients__item__card {
+  width: 50%;
+  padding: 2rem 2.5rem;
+  margin-right: 1rem;
+  border-radius: var(--radius);
+  align-self: center;
+  background: var(--bgPrimary);
+  box-shadow: var(--neumoShadow1);
+}
+
+.card__infos {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.card__infos img {
+  width: 4rem;
+  border-radius: 50%;
+  height: 4rem;
+}
+
+.infos__image {
+  margin-right: 1rem;
+}
+
+.infos__name h4 {
+  margin-bottom: 0rem;
+}
+
+.card__stars {
+  margin-top: 1rem;
+}
+
+.card__stars i {
+  font-size: .9rem;
+  color: var(--primary);
+  margin-bottom: 0;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.card__stars i:last-child {
+  color: var(--primarylight);
+}
+
+/* =============================== 9. Contact me  =============================== */
+
+.contact {
+  display: flex;
+  padding: 3.5rem;
+  border-radius: var(--radius);
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bgPrimary);
+  box-shadow: var(--neumoShadow1);
+}
+
+.contact__descriptions p {
+  font-size: 1.2rem;
+}
+
+.contact__descriptions a {
+  font-size: 1.9rem;
+  font-family: var(--fontbold);
+  color: var(--primary);
+  transition: var(--transitions);
+}
+
+.contact__descriptions a:hover {
+  color: var(--primarydark);
+}
+
+.modal__btn {
+  border: none;
+}
+
+.modal__bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(236, 240, 243,.6);;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity .3s;
+}
+
+.bg__active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  background: var(--bgPrimary);
+  width: 30%;
+  height: auto;
+  padding: 1.9rem 2rem;
+  position: relative;
+  border-radius: var(--radius);
+  box-shadow: var(--neumoShadow1);
+}
+
+.modal h3 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: .3rem;
+}
+
+.modal input,
+.modal textarea {
+  display: block;
+  height: 2.3rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: solid 1px var(--neumoP);
+  padding: 0px 15px 0px 15px;
+  background: transparent;
+  outline: none;
+  font-size: .8rem;
+  color: var(--neumoTitle);
+  font-family: var(--fontregular);
+  border-radius: .1rem;
+}
+
+.modal textarea {
+  resize: none;
+  height: 150px;
+  padding-top: 10px;
+}
+
+.modal input::placeholder, 
+.modal textarea::placeholder {
+  color: var(--neumoP);
+  font-size: .8rem;
+}
+
+.modal__send {
+margin-top: .9rem;
+border: none;
+}
+
+.modal__close {
+  position: absolute;
+  top:.8rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: .6rem;
+  text-transform: uppercase;
+  color: var(--neumoP);
+}
+
+/* =============================== 10. Footer  =============================== */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer__nav li:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.footer__nav li {
+  text-transform: uppercase;
+  color: var(--neumoTitle);
+  transition: all .1s ease;
+}
+
+.footer__nav li:hover {
+  color: var(--primary); 
+}
+
+.footer__nav {
+  margin-bottom: 2rem;
+}
+
+.footer__socials i {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 0;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.footer__socials i:hover {
+  color: var(--primarydark);
+}
+
+.footer__socials a:not(:first-child) {
+  margin-left: 1.3rem;
+}
+
+/* =============================== 11. Copyright  =============================== */
+
+.copyright {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+
+
+/* =============================== 12. MediaQuery  =============================== */
+
+@media (max-width: 800px) {
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+  h5 {
+    margin-bottom: 1rem;
+  }
+
+  .nav {
+    width: 90%;
+    padding: .4rem .6rem;  
+  }
+  .radius {
+    border-radius: 1.8rem;
+  }
+  .nav__logo {
+    position: fixed;
+    top: 0;
+    margin-top: 16px;
+    margin-left: 0.5em;
+  }
+  .nav__menu li:not(:first-child) {
+    margin-left: 0;
+  }
+  .nav ul {
+    max-height: 0px;  
+    overflow: hidden; 
+  }
+  .showing {
+    max-height: 34em!important;
+  }
+  .nav ul li {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 24px;
+    text-align: center;
+  }
+  .nav__icon {
+    display: block;
+  }
+
+
+  .banner__img {
+    display: none;
+    /* display: block;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center; */
+  }
+  .banner__title__desc h1 {
+    line-height: 1.1;
+  }
+  .banner__title__desc p {
+    margin-bottom: 3rem;
+  }
+  .banner__title__desc a {
+    /* display: none; */
+  }
+  
+  
+
+
+  .services__descriptions {
+    padding-right: 0;
+  }
+  .services__items {
+    display: block;
+  }
+  .services__items1 {
+    margin-top: var(--mb2);
+  }
+  .services__items2 {
+    margin-bottom: 0;
+  }
+  .card2 {
+    margin-bottom: var(--mb1);
+  }
+
+
+ 
+  .numbers__list li:nth-child(1),
+  .numbers__list li:nth-child(2) {
+    margin-bottom: var(--mb2);
+  }
+
+
+  .portfolio__descriptions {
+    padding-left: 0;
+    margin-bottom: var(--mb2);
+  }
+  .wall-column {
+    padding: 0 0; 
+  }
+  .portfolio__gallery {
+    order: 1;
+  }
+  #last-img {
+    margin-bottom: 0;
+  }
+  #first-img, #last-img {
+    height: auto;
+  }
+
+
+  .hire__descriptions {
+    margin-bottom: var(--mb2);
+  }
+  .hire__desc {
+    position: inherit;
+    padding-right: 0;
+  }
+  .hire__item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .hire__item i {
+    margin-bottom: var(--mb1);
+  }
+  .hire__item__desc {
+    margin-left: 0; 
+  }
+
+
+  /* .company__list {
+    flex-direction: column;
+    align-items: center;
+  } */
+
+
+  .container__padding__left {
+    width: 100%;
+    padding-left: calc(50% - var(--container) / 2);
+    padding-right: calc(50% - var(--container) / 2);
+  }
+  .clients {
+    flex-direction: column;
+  }
+  .clients__descriptions {
+    width: 100%;
+    margin-bottom: var(--mb2);
+  }
+  .clients__items {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .clients__item__card {
+    width: 100%;
+    margin-right: 0;
+  }
+  .clients__item__card:not(:last-child) {
+    margin-bottom: var(--mb1);
+  }
+
+
+  .contact {
+    flex-direction: column;
+    box-shadow: none;
+  }
+  .contact__descriptions {
+    text-align: center;
+    margin-bottom: var(--mb1);
+  }
+  .contact__descriptions p {
+    font-size: 1rem;
+  }
+  .contact__descriptions a {
+    font-size: 1.5rem;
+  }
+  .modal {
+    width: 90%;
+  }
+
+
+  .footer__nav {
+    display: none;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
