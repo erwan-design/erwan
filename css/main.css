@@ -303,6 +303,7 @@ a.nav__active {
 
 .banner__img img {
   width: -webkit-fill-available;
+  border-radius: var(--radius);
 }
 
 .banner__title__desc {
@@ -469,6 +470,7 @@ a.nav__active {
   width: 100%;
   margin: 0 0 24px 0;
   border-radius: var(--radius);
+  cursor: pointer;
 }
 
 #first-img,
@@ -501,6 +503,70 @@ a.nav__active {
   float: none;
   }
 }
+
+.portfolio__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+  font-size: .6rem;
+  text-transform: uppercase;
+  color: var(--neumoTitle);
+}
+
+.portfolio__modal {
+  position: fixed;
+  height:100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(236, 240, 243,.6);
+  z-index: 1;
+  color: var(--neumoTitle);
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.portfolio__modalContent {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio__modalImg {
+  width: 80%;
+  max-width: 43.75rem;
+  border-radius: var(--radius);
+  box-shadow: var(--neumoShadow1);
+}
+
+.portfolio__modalTxt {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.portfolio__modal.portfolio__appear {
+  opacity: 1;
+  pointer-events: all;
+}
+.portfolio__modal.portfolio__appear .portfolio__modalImg,
+.portfolio__modal.portfolio__appear .portfolio__modalTxt {
+  animation: zoom .3s ease-in-out;
+}
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
 
 /* =============================== 5(bis). Video  =============================== */
 
@@ -874,12 +940,8 @@ border: none;
   .banner__title__desc p {
     margin-bottom: 3rem;
   }
-  .banner__title__desc a {
-    /* display: none; */
-  }
   
   
-
 
   .services__descriptions {
     padding-right: 0;
