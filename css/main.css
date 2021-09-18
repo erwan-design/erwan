@@ -304,6 +304,8 @@ a.nav__active {
 .banner__img img {
   width: -webkit-fill-available;
   border-radius: var(--radius);
+  max-width: fit-content;
+  max-height: 80vh;
 }
 
 .banner__title__desc {
