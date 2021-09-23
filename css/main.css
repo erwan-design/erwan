@@ -986,6 +986,10 @@ border: none;
     height: auto;
   }
 
+  .portfolio__modalImg {
+    width: 86%;
+  }
+
 
   .hire__descriptions {
     margin-bottom: var(--mb2);
