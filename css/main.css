@@ -936,6 +936,10 @@ border: none;
     object-fit: cover;
     object-position: center; */
   }
+  .banner__title__desc {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
   .banner__title__desc h1 {
     line-height: 1.1;
   }
