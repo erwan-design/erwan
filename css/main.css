@@ -839,7 +839,11 @@ border: none;
   flex-direction: column;
 }
 
-.footer__nav li:not(:first-child) {
+.footer__disclaimer {
+  margin-bottom: 2rem;
+}
+
+/* .footer__nav li:not(:first-child) {
   margin-left: 2rem;
 }
 
@@ -855,7 +859,7 @@ border: none;
 
 .footer__nav {
   margin-bottom: 2rem;
-}
+} */
 
 .footer__socials i {
   font-size: 1.8rem;
