@@ -843,6 +843,10 @@ border: none;
   margin-bottom: 2rem;
 }
 
+.footer__disclaimer p {
+  text-align: center;
+}
+
 /* .footer__nav li:not(:first-child) {
   margin-left: 2rem;
 }
