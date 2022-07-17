@@ -2,20 +2,30 @@
   font-size: .9rem;
   letter-spacing: .05rem;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--lightWhite);
   padding: .7rem 2.1rem;
-  border-radius: 20rem;
   font-family: var(--fontregular);
   display: inline-block;
   cursor: pointer;
   transition: all .3s ease;
-  background: var(--bgPrimary);
-  box-shadow: var(--neumoShadow2);
+  background: var(--primary);
+  border: 1px solid var(--primary) ;
 }
 
 .button:hover {
-  background: var(--bgPrimary);
-  box-shadow: var(--neumoShadow1);
-  color: rgba(16,77,130,.5);
+  background: var(--lightWhite);
+  color: var(--primary);
+  border: 1px solid var(--primary) ;
 }
 
+
+.buttonBis {
+  color: var(--primary);
+  background: var(--lightWhite);
+}
+
+.buttonBis:hover {
+  background: var(--primary);
+  color: var(--lightWhite);
+  border: 1px solid var(--primary) ;
+}

@@ -1,15 +1,15 @@
 @font-face {
-  font-family: Proxima thin;
-  src: url(font/ProximaNova-Thin.otf);
+  font-family: Ubuntu light;
+  src: url(font/Ubuntu-Light.ttf);
 }
 
 @font-face {
-  font-family: Proxima regular;
-  src: url(font/ProximaNova-Regular.otf);
+  font-family: Ubuntu regular;
+  src: url(font/Ubuntu-Regular.ttf);
 }
 
 @font-face {
-  font-family: Proxima bold;
-  src: url(font/ProximaNova-Bold.otf);
+  font-family: Ubuntu bold;
+  src: url(font/Ubuntu-Bold.ttf);
 }
 
