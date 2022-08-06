@@ -26,7 +26,7 @@
   --primaryDark: rgba(31, 31, 28, 1);
   --primaryLight: rgba(51, 51, 48, .4);
 
-  --lightWhite: rgb(255, 255, 255); 
+  --lightWhite: rgb(251, 251, 251); 
 
   --fontthin: "Ubuntu light", sans-serif;
   --fontregular: "Ubuntu regular", sans-serif;
@@ -506,7 +506,7 @@ a.nav__active {
   left: 0;
   background-color: rgba(51, 51, 48, .4);
   z-index: 1;
-  color: var(--primary);
+  color: var(--lightWhite);
   overflow: auto;
   opacity: 0;
   pointer-events: none;
@@ -528,6 +528,7 @@ a.nav__active {
 .portfolio__modalTxt {
   margin-top: 1rem;
   font-size: 1rem;
+  color: var(--lightWhite);
 }
 
 .portfolio__modal.portfolio__appear {
