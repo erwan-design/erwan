@@ -931,6 +931,12 @@ margin-top: .9rem;
   .card2 {
     margin-bottom: var(--mb1);
   }
+  .items__card {
+    padding: 1.7rem 0;
+  }
+  .items__card:last-child {
+    padding-bottom: 0;
+  }
 
 
  
@@ -972,6 +978,10 @@ margin-top: .9rem;
   .hire__item {
     align-items: flex-start;
     flex-direction: column;
+    padding: 1.3rem 0;
+  }
+  .hire__item:last-child {
+    padding-bottom: 0;
   }
   .hire__item i {
     margin-bottom: var(--mb1);
@@ -1006,7 +1016,12 @@ margin-top: .9rem;
   .clients__item__card {
     width: 100%;
     margin-right: 0;
+    padding: 2rem 0;
   }
+  .clients__item__card:last-child {
+    padding-bottom: 0;
+  }
+
   .clients__item__card:not(:last-child) {
     margin-bottom: var(--mb1);
   }
