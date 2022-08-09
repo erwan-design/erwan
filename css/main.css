@@ -792,7 +792,8 @@ a.nav__active {
 }
 
 .modal__send {
-margin-top: .9rem;
+  margin-top: .9rem;
+  width: 100%;
 }
 
 .modal__close {
