@@ -291,7 +291,7 @@ a.nav__active {
 
 .banner__img img {
   width: -webkit-fill-available;
-  max-width: fit-content;
+  /* max-width: fit-content; */
   max-height: 80vh;
 }
 
@@ -495,7 +495,7 @@ a.nav__active {
   cursor: pointer;
   font-size: .6rem;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--lightWhite);
 }
 
 .portfolio__modal {
